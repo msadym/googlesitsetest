@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Google Sheets Data</title>
+</head>
+<body>
+    <div id="data-field" style="white-space: pre-wrap; font-family: Arial, sans-serif;"></div>
+    <script>
+        async function updateTextField() {
+            const response = await fetch('https://script.google.com/macros/s/AKfycbxVUtgvFs6bKw3J_TpQcTk4FIItacXHuJj1YyuCPkJTfQw2b1KZ-fmRpnWco8ZqtNegaQ/exec');
+            const data = await response.text();
+            document.getElementById('data-field').innerText = data;
+        }
+        document.addEventListener('DOMContentLoaded', updateTextField);
+    </script>
+</body>
+</html>
