@@ -6,23 +6,10 @@
     <title>Google Sheets Data</title>
 </head>
 <body>
-    <div id="data-field" style="white-space: pre-wrap; font-family: Arial, sans-serif; padding: 20px;">
-        Загрузка данных...
-    </div>
-    <script>
-        async function updateTextField() {
-    try {
-        const response = await fetch('https://script.google.com/macros/s/AKfycbzf6HgvOcskU5A-4J3FW82tAOgn5sAuAvwBYeQazP-Pymy2T5L5Doj4Pd_iqosN1jZTMw/exec', {
-            mode: 'no-cors'
-        });
-        // Тело ответа в режиме 'no-cors' будет недоступным, но ошибки CORS пропадут
-        document.getElementById('data-field').innerText = "Запрос отправлен. Проверьте логи.";
-    } catch (error) {
-        document.getElementById('data-field').innerText = "Ошибка: " + error.message;
-    }
-}
-        document.addEventListener('DOMContentLoaded', updateTextField);
-    </script>
+    <h1>Данные из Google Sheets</h1>
+    <iframe 
+        src="https://script.google.com/macros/s/AKfycbzf6HgvOcskU5A-4J3FW82tAOgn5sAuAvwBYeQazP-Pymy2T5L5Doj4Pd_iqosN1jZTMw/exec" 
+        style="border: none; width: 100%; height: 500px;">
+    </iframe>
 </body>
 </html>
-
